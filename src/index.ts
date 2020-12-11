@@ -34,12 +34,12 @@ export default (options: RTOptions = {}): Function => {
     });
 
     return tree;
-  }
-}
+  };
+};
 
 interface RTOptions {
   attr?: string;
   removeDisplayNone?: boolean;
 }
 
-module.exports = exports.default
+module.exports = exports.default;

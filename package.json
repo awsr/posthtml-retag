@@ -1,0 +1,25 @@
+{
+  "name": "posthtml-retag",
+  "version": "0.1.0",
+  "description": "Tag converter plugin for PostHTML",
+  "license": "MIT",
+  "keywords": [
+    "posthtml",
+    "posthtml-plugin"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "homepage": "https://github.com/awsr/posthtml-retag#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awsr/posthtml-retag"
+  },
+  "devDependencies": {
+    "posthtml": "^0.15.1"
+  }
+}

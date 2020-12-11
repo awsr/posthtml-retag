@@ -2,7 +2,6 @@
   "name": "posthtml-retag",
   "version": "0.1.0",
   "description": "Tag converter plugin for PostHTML",
-  "license": "MIT",
   "keywords": [
     "posthtml",
     "posthtml-plugin"
@@ -15,11 +14,18 @@
   "engines": {
     "node": ">=10"
   },
+  "author": {
+    "name": "Alex Wiser"
+  },
   "homepage": "https://github.com/awsr/posthtml-retag#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/awsr/posthtml-retag"
   },
+  "bugs": {
+    "url": "https://github.com/awsr/posthtml-retag/issues"
+  },
+  "license": "MIT",
   "scripts": {
     "build": "tsc && prettier --write ./lib"
   },

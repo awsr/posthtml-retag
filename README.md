@@ -51,12 +51,12 @@ const fs = require('fs');
 const posthtml = require('posthtml');
 const retag = require('posthtml-retag');
 
-const html = fs.readFileSync("./input.html", "utf8");
+const html = fs.readFileSync('./input.html', 'utf8');
 
 posthtml(
   [
     retag({
-      attr: "retag",
+      attr: 'retag',
       walk: false,
       removeDisplayNone: false
     })

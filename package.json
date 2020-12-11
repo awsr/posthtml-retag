@@ -7,7 +7,7 @@
     "posthtml",
     "posthtml-plugin"
   ],
-  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],

@@ -57,7 +57,6 @@ posthtml(
   [
     retag({
       attr: 'retag',
-      walk: false,
       removeDisplayNone: false
     })
   ])

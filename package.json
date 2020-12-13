@@ -29,6 +29,9 @@
   "scripts": {
     "build": "tsc && prettier --write ./lib"
   },
+  "peerDependencies": {
+    "posthtml": "^0.15.1"
+  },
   "devDependencies": {
     "@types/node": "^14.14.12",
     "posthtml": "^0.15.1",

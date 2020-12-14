@@ -1,6 +1,6 @@
 import { Node } from "posthtml";
 
-export default function posthtmlReTag(options: {attr?: string; removeDisplayNone?: boolean} = {}): Function {
+export default function posthtmlReTag(options: { attr?: string; removeDisplayNone?: boolean } = {}): Function {
   options.attr = options.attr || "retag";
   options.removeDisplayNone = options.removeDisplayNone || false;
 
@@ -37,4 +37,4 @@ export default function posthtmlReTag(options: {attr?: string; removeDisplayNone
   };
 };
 
-module.exports = exports.default;
+module.exports = posthtmlReTag;

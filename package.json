@@ -27,7 +27,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsc && prettier --write ./lib"
+    "build": "tsc && prettier --write ./lib && cp ./types/index.d.ts ./lib/index.d.ts"
   },
   "peerDependencies": {
     "posthtml": "^0.15.1"

@@ -35,6 +35,6 @@ export default function posthtmlReTag(options: { attr?: string; removeDisplayNon
 
     return tree;
   };
-};
+}
 
 module.exports = posthtmlReTag;

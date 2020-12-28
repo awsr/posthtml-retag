@@ -1,4 +1,4 @@
-export default function posthtmlReTag(options?: {
+declare function posthtmlReTag(options?: {
   attr?: string;
   removeDisplayNone?: boolean;
 }): Function;

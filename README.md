@@ -43,7 +43,7 @@ After:
 ## Install
 
 ```bash
-npm install --save-dev posthtml-retag
+npm install --save-dev posthtml posthtml-retag
 ```
 
 ## Usage

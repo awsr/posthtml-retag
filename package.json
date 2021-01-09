@@ -1,15 +1,17 @@
 {
   "name": "posthtml-retag",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Tag converter plugin for PostHTML",
   "keywords": [
+    "html",
     "posthtml",
     "posthtml-plugin"
   ],
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "types": "types/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "types"
   ],
   "engines": {
     "node": ">=10"
@@ -27,7 +29,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsc && prettier --write ./lib && cp ./types/index.d.ts ./lib/index.d.ts"
+    "build": "tsc && prettier --write ./lib"
   },
   "peerDependencies": {
     "posthtml": "^0.15.1"

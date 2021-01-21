@@ -7,6 +7,7 @@ A [PostHTML](https://github.com/posthtml/posthtml) plugin for converting HTML ta
 Useful as part of a post-export script for visual editors that don't support certain tags, among other things.
 
 Before:
+
 ``` html
 <html>
   <body>
@@ -24,6 +25,7 @@ Before:
 ```
 
 After:
+
 ``` html
 <html>
   <body>
@@ -48,10 +50,13 @@ npm install --save-dev posthtml posthtml-retag
 
 ## Usage
 
+<details open><summary>CommonJS format</summary>
+
 ``` js
 const fs = require('fs');
 const posthtml = require('posthtml');
 const retag = require('posthtml-retag');
+// Import additional plugins (if any)
 
 const html = fs.readFileSync('/path/to/input.html', 'utf8');
 
@@ -60,11 +65,36 @@ posthtml(
     retag({
       attr: 'retag',
       removeDisplayNone: false
-    })
+    }),
+    // Additional plugins
   ])
   .process(html)
   .then(result => fs.writeFileSync('/path/to/output.html', result.html));
 ```
+</details>
+
+<details><summary>ES Module format</summary>
+
+``` js
+import { readFileSync, writeFileSync } from 'fs';
+import posthtml from 'posthtml';
+import retag from 'posthtml-retag';
+// Import additional plugins (if any)
+
+const html = readFileSync('/path/to/input.html', 'utf8');
+
+posthtml(
+  [
+    retag({
+      attr: 'retag',
+      removeDisplayNone: false
+    }),
+    // Additional plugins
+  ])
+  .process(html)
+  .then(result => writeFileSync('/path/to/output.html', result.html));
+```
+</details>
 
 ## Options
 

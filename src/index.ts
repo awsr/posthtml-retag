@@ -1,5 +1,14 @@
 import { Node } from "posthtml";
 
+/**
+ * A PostHTML plugin for converting HTML tags to a specified target type.
+ * 
+ * @param {Object} [options] - Options object for PostHTML-ReTag
+ * @param {string} [options.attr="retag"] - Name of the attribute that contains the new tag. Defaults to `retag`.
+ * @param {boolean} [options.removeDisplayNone=false] - Also remove `display: none` from the style attribute
+ * of the element being converted. If the style attribute would be empty after this, it will be removed.
+ * Defaults to `false`.
+ */
 export default function posthtmlReTag(options: { attr?: string; removeDisplayNone?: boolean } = {}): Function {
   options.attr = options.attr || "retag";
   options.removeDisplayNone = options.removeDisplayNone || false;

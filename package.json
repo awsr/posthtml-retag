@@ -1,6 +1,6 @@
 {
   "name": "posthtml-retag",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tag converter plugin for PostHTML",
   "keywords": [
     "html",

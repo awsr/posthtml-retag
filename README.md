@@ -98,7 +98,7 @@ posthtml(
 
 ## Options
 
-#### `attr`
+### `attr`
 
 Type: `string`
 
@@ -106,8 +106,7 @@ Default: `retag`
 
 Specify the attribute that stores the name of the tag you want to convert to.
 
-
-#### `removeDisplayNone`
+### `removeDisplayNone`
 
 Type: `boolean`
 

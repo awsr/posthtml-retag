@@ -43,7 +43,7 @@
     "typescript": "^5.2.2"
   },
   "prettier": {
-    "printWidth": 120,
+    "printWidth": 100,
     "trailingComma": "none"
   }
 }

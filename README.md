@@ -1,4 +1,4 @@
-# PostHTML-ReTag [<img align="right" height="100" title="PostHTML logo" src="http://posthtml.github.io/posthtml/logo.svg">](https://github.com/posthtml/posthtml)
+# PostHTML-ReTag [<img align="right" height="100" title="PostHTML logo" src="https://posthtml.github.io/posthtml/logo.svg">](https://github.com/posthtml/posthtml)
 
 [![NPM][npm]][npm-url]
 
@@ -6,7 +6,7 @@ A [PostHTML](https://github.com/posthtml/posthtml) plugin for converting HTML ta
 
 Useful as part of a post-export script for visual editors that don't support certain tags, among other things.
 
-**NOTE:** As of version 2.0.0 `retag` is a **named** import instead of a default one.
+**NOTE:** As of version 2.0.0 `retag` is a **named** export/import instead of a default one and is targeted/tested on Node 16+.
 
 Before:
 
@@ -52,15 +52,15 @@ npm install --save-dev posthtml posthtml-retag
 
 ## Usage
 
-<details open><summary>CommonJS format</summary>
+<details open><summary>ES Module format</summary>
 
 ``` js
-const fs = require('node:fs');
-const posthtml = require('posthtml');
-const { retag } = require('posthtml-retag');
+import { readFileSync, writeFileSync } from 'node:fs';
+import posthtml from 'posthtml';
+import { retag } from 'posthtml-retag';
 // Import additional plugins (if any)
 
-const html = fs.readFileSync('/path/to/input.html', 'utf8');
+const html = readFileSync('/path/to/input.html', 'utf8');
 
 posthtml(
   [
@@ -71,16 +71,16 @@ posthtml(
     // Additional plugins
   ])
   .process(html)
-  .then(result => fs.writeFileSync('/path/to/output.html', result.html));
+  .then(result => writeFileSync('/path/to/output.html', result.html));
 ```
 </details>
 
-<details><summary>ES Module format</summary>
+<details><summary>CommonJS format</summary>
 
 ``` js
-import { readFileSync, writeFileSync } from 'node:fs';
-import posthtml from 'posthtml';
-import { retag } from 'posthtml-retag';
+const { readFileSync, writeFileSync } = require('node:fs');
+const posthtml = require('posthtml');
+const { retag } = require('posthtml-retag');
 // Import additional plugins (if any)
 
 const html = readFileSync('/path/to/input.html', 'utf8');

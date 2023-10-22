@@ -26,7 +26,7 @@ export default function posthtmlReTag(options: { attr?: string; removeDisplayNon
           node.tag = newTag.trim();
 
           if (options.removeDisplayNone && typeof node.attrs.style === "string") {
-            node.attrs.style = node.attrs.style.split(";").filter(removeDN).join(";").trim();
+            node.attrs.style = node.attrs.style.split(";").filter(removeDN).join(";");
 
             if (node.attrs.style.length === 0) {
               delete node.attrs.style;

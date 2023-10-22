@@ -1,0 +1,79 @@
+*                 text=auto
+
+# Scripts
+*.bash            text eol=lf
+*.bat             text eol=crlf
+*.cmd             text eol=crlf
+*.ps1             text eol=crlf
+*.sh              text eol=lf
+
+# Source code
+*.css             text eol=lf diff=css
+*.htm             text eol=lf diff=html
+*.html            text eol=lf diff=html
+*.ini             text eol=lf
+*.js              text eol=lf
+*.cjs             text eol=lf
+*.mjs             text eol=lf
+*.json            text eol=lf
+*.py              text eol=lf diff=python
+*.scss            text eol=lf diff=css
+*.ts              text eol=lf
+*.cts             text eol=lf
+*.mts             text eol=lf
+*.xml             text eol=lf
+
+# Documentation
+*.ipynb           text
+*.markdown        text
+*.md              text
+*.mdwn            text
+*.mdown           text
+*.mkd             text
+*.mkdn            text
+*.mdtxt           text
+*.mdtext          text
+*.txt             text
+AUTHORS           text
+CHANGELOG         text
+CHANGES           text
+CONTRIBUTING      text
+COPYING           text
+copyright         text
+*COPYRIGHT*       text
+INSTALL           text
+license           text
+LICENSE           text
+NEWS              text
+readme            text
+*README*          text
+TODO              text
+
+# Configs
+*.cnf             text
+*.conf            text
+*.config          text
+.editorconfig     text
+.env              text
+.gitattributes    text
+.gitconfig        text
+.htaccess         text
+*.lock            text -diff
+package-lock.json text -diff
+*.toml            text
+*.yaml            text
+*.yml             text
+
+# Archives
+*.7z              binary
+*.gz              binary
+*.jar             binary
+*.rar             binary
+*.tar             binary
+*.zip             binary
+
+# RC files (like .babelrc or .eslintrc)
+*.*rc             text
+
+# Ignore files (like .npmignore or .gitignore)
+*.*ignore         text

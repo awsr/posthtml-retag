@@ -114,14 +114,16 @@ Type: `boolean`
 
 Default: `false`
 
-Set to `true` to also remove `display: none;` from the style attribute of the element being converted. If it's the only value in the style attribute, the style attribute will be removed.
+Set to `true` to also remove `display: none;` from the style attribute of the element being converted unless it's set as `!important`. If it's the only value in the style attribute, the style attribute will be removed.
 
 ```html
 <div retag="template" style="display: none">stuff</div>
+<div retag="template" style="display: none !important">stuff</div>
 ```
 
 ```html
 <template>stuff</template>
+<template style="display: none !important">stuff</template>
 ```
 
 [npm]: https://img.shields.io/npm/v/posthtml-retag.svg

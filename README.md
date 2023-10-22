@@ -1,4 +1,4 @@
-# PostHTML-ReTag [<img align="right" height="100" title="PostHTML logo" src="https://posthtml.github.io/posthtml/logo.svg">](https://github.com/posthtml/posthtml)
+# PostHTML-Retag [<img align="right" height="100" title="PostHTML logo" src="https://posthtml.github.io/posthtml/logo.svg">](https://github.com/posthtml/posthtml)
 
 [![NPM][npm]][npm-url]
 
@@ -6,7 +6,7 @@ A [PostHTML](https://github.com/posthtml/posthtml) plugin for converting HTML ta
 
 Useful as part of a post-export script for visual editors that don't support certain tags, among other things.
 
-**NOTE:** As of version 2.0.0 `retag` is a **named** export/import instead of a default one and is targeted/tested on Node 16+.
+(**NOTE:** As of version 2.0.0 `retag` is a **named** export/import instead of a default one and is targeted/tested on Node 16+.)
 
 Before:
 

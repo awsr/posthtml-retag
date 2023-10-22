@@ -6,15 +6,16 @@ import { Node } from "posthtml";
  * @param {Object} [options] - Options object for PostHTML-ReTag.
  * @param {string} [options.attr="retag"] - Name of the attribute that contains the new tag. Defaults to `retag`.
  * @param {boolean} [options.removeDisplayNone=false] - Also remove `display: none` from the style attribute
- * of the element being converted. If the style attribute would be empty after this, it will be removed.
- * Defaults to `false`.
+ * of the element being converted unless it is marked as `important`. If the style attribute is empty after
+ * conversion, it is removed. Defaults to `false`.
  */
 export default function posthtmlReTag(options: { attr?: string; removeDisplayNone?: boolean } = {}): Function {
   options.attr = options.attr || "retag";
   options.removeDisplayNone = options.removeDisplayNone || false;
 
-  function removeDN(rule: string) {
-    return !/display:\s*none/i.test(rule) && rule.length > 0;
+  function removeDN(rule: string): boolean {
+    rule = rule.trim();
+    return rule.length > 0 && (!/display:\s*none/i.test(rule) || /!important/i.test(rule));
   }
 
   return function process(tree: Node): Node {

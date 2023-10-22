@@ -13,9 +13,9 @@ export function retag(options: { attr?: string; removeDisplayNone?: boolean } = 
   options.attr = options.attr || "retag";
   options.removeDisplayNone = options.removeDisplayNone || false;
 
-  function removeDN(rule: string): boolean {
-    rule = rule.trim();
-    return rule.length > 0 && (!/display:\s*none/i.test(rule) || /!important/i.test(rule));
+  function removeDN(style: string): boolean {
+    style = style.trim();
+    return style.length > 0 && (!/display:\s*none/i.test(style) || /!important/i.test(style));
   }
 
   return function process(tree: Node): Node {

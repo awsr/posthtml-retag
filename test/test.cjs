@@ -46,31 +46,32 @@ const testPairs = [
 console.log("\nTesting CommonJS format");
 
 test("Test span to h1", async () => {
-  await runTest(...testPairs[0]);
+  runTest(...testPairs[0]);
 });
 
 test("Test for not modifying unrelated attributes", async () => {
-  await runTest(...testPairs[1]);
+  runTest(...testPairs[1]);
 });
 
 test("Test for custom attribute name", async () => {
-  await runTest(...testPairs[2], { attr: "changeto" });
+  runTest(...testPairs[2], { attr: "changeto" });
 });
 
 test("Test removeDisplayNone", async () => {
-  await runTest(...testPairs[3], { removeDisplayNone: true });
+  runTest(...testPairs[3], { removeDisplayNone: true });
 });
 
 test("Test for nested retagging", async () => {
-  await runTest(...testPairs[4]);
+  runTest(...testPairs[4]);
 });
 
 test("Test for removeDisplayNone not affecting other style declarations", async () => {
-  await runTest(...testPairs[5], { removeDisplayNone: true });
+  runTest(...testPairs[5], { removeDisplayNone: true });
 });
 
 test("Test for ignoring '!important'", async () => {
-  await runTest(...testPairs[6], { removeDisplayNone: true });
+  runTest(...testPairs[6], { removeDisplayNone: true });
+});
 });
 
 

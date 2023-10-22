@@ -1,5 +1,6 @@
 import assert from "assert";
 import test from "node:test";
+import { readFileSync } from "node:fs";
 
 import posthtml from "posthtml";
 import { retag } from "posthtml-retag";
@@ -41,6 +42,11 @@ const testPairs = [
     '<span retag="small" style="display: none !important;">Test for overriding <code>removeDisplayNone</code> removal</span>',
     '<small style="display: none !important">Test for overriding <code>removeDisplayNone</code> removal</small>',
   ],
+  [
+    // 7
+    readFileSync("test/from/test.html", "utf8"),
+    readFileSync("test/to/test.html", "utf8")
+  ]
 ];
 
 console.log("\nTesting ES Module format");
@@ -72,6 +78,9 @@ test("Test for removeDisplayNone not affecting other style declarations", async 
 test("Test for ignoring '!important'", async () => {
   runTest(...testPairs[6], { removeDisplayNone: true });
 });
+
+test("Test full conversion", async () => {
+  runTest(...testPairs[7], { removeDisplayNone: true });
 });
 
 

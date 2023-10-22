@@ -46,5 +46,3 @@ export function retag(options: { attr?: string; removeDisplayNone?: boolean } = 
     return tree;
   };
 }
-
-module.exports = posthtmlReTag;

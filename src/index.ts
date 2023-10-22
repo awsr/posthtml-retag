@@ -1,4 +1,4 @@
-import { Node } from "posthtml";
+import type { Node } from "posthtml";
 
 /**
  * A PostHTML plugin for converting HTML tags to a specified target type.
@@ -9,7 +9,7 @@ import { Node } from "posthtml";
  * of the element being converted unless it is marked as `important`. If the style attribute is empty after
  * conversion, it is removed. Defaults to `false`.
  */
-export default function posthtmlReTag(options: { attr?: string; removeDisplayNone?: boolean } = {}): Function {
+export default function posthtmlReTag(options: { attr?: string; removeDisplayNone?: boolean } = {}): (tree: Node) => Node {
   options.attr = options.attr || "retag";
   options.removeDisplayNone = options.removeDisplayNone || false;
 

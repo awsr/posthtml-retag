@@ -1,6 +1,6 @@
 {
   "name": "posthtml-retag",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Tag converter plugin for PostHTML",
   "main": "lib/index.js",
   "exports": {

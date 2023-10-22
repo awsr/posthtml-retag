@@ -51,35 +51,35 @@ const testPairs = [
 
 console.log("\nTesting ES Module format");
 
-test("Test span to h1", async () => {
+test("[async] Test span to h1", async () => {
   runTest(...testPairs[0]);
 });
 
-test("Test for not modifying unrelated attributes", async () => {
+test("[async] Test for not modifying unrelated attributes", async () => {
   runTest(...testPairs[1]);
 });
 
-test("Test for custom attribute name", async () => {
+test("[async] Test for custom attribute name", async () => {
   runTest(...testPairs[2], { attr: "changeto" });
 });
 
-test("Test removeDisplayNone", async () => {
+test("[async] Test removeDisplayNone", async () => {
   runTest(...testPairs[3], { removeDisplayNone: true });
 });
 
-test("Test for nested retagging", async () => {
+test("[async] Test for nested retagging", async () => {
   runTest(...testPairs[4]);
 });
 
-test("Test for removeDisplayNone not affecting other style declarations", async () => {
+test("[async] Test for removeDisplayNone not affecting other style declarations", async () => {
   runTest(...testPairs[5], { removeDisplayNone: true });
 });
 
-test("Test for ignoring '!important'", async () => {
+test("T[async] est for ignoring '!important'", async () => {
   runTest(...testPairs[6], { removeDisplayNone: true });
 });
 
-test("Test full conversion", async () => {
+test("[async] Test full conversion", async () => {
   runTest(...testPairs[7], { removeDisplayNone: true });
 });
 

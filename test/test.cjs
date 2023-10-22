@@ -6,6 +6,9 @@ const posthtml = require("posthtml");
 const { retag } = require("posthtml-retag");
 
 
+// In addition to showing if CommonJS fails to import, this is used to verify posthtml in sync mode
+
+
 const testPairs = [
   [
     // 0
@@ -49,43 +52,45 @@ const testPairs = [
   ]
 ];
 
-console.log("\nTesting CommonJS format");
+console.log("\nTesting CommonJS format + synchronous");
 
-test("Test span to h1", async () => {
+test("[sync] Test span to h1", () => {
   runTest(...testPairs[0]);
 });
 
-test("Test for not modifying unrelated attributes", async () => {
+test("[sync] Test for not modifying unrelated attributes", () => {
   runTest(...testPairs[1]);
 });
 
-test("Test for custom attribute name", async () => {
+test("[sync] Test for custom attribute name", () => {
   runTest(...testPairs[2], { attr: "changeto" });
 });
 
-test("Test removeDisplayNone", async () => {
+test("[sync] Test removeDisplayNone", () => {
   runTest(...testPairs[3], { removeDisplayNone: true });
 });
 
-test("Test for nested retagging", async () => {
+test("[sync] Test for nested retagging", () => {
   runTest(...testPairs[4]);
 });
 
-test("Test for removeDisplayNone not affecting other style declarations", async () => {
+test("[sync] Test for removeDisplayNone not affecting other style declarations", () => {
   runTest(...testPairs[5], { removeDisplayNone: true });
 });
 
-test("Test for ignoring '!important'", async () => {
+test("[sync] Test for ignoring '!important'", () => {
   runTest(...testPairs[6], { removeDisplayNone: true });
 });
 
-test("Test full conversion", async () => {
+test("[sync] Test full conversion", () => {
   runTest(...testPairs[7], { removeDisplayNone: true });
 });
 
 
 async function runTest(html, expected, options = {}) {
-  return posthtml([retag(options)])
-    .process(html)
-    .then((result) => assert.strictEqual(result.html, expected));
+  const result = posthtml()
+    .use(retag(options))
+    .process(html, { sync: true })
+    .html
+  return assert.strictEqual(result, expected);
 }

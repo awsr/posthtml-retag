@@ -2,7 +2,7 @@ import assert from "assert";
 import test from "node:test";
 
 import posthtml from "posthtml";
-import retag from "posthtml-retag";
+import { retag } from "posthtml-retag";
 
 
 const testPairs = [

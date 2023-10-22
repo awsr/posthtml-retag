@@ -2,7 +2,7 @@ const assert = require("assert");
 const test = require("node:test");
 
 const posthtml = require("posthtml");
-const retag = require("posthtml-retag");
+const { retag } = require("posthtml-retag");
 
 
 const testPairs = [

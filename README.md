@@ -6,9 +6,11 @@ A [PostHTML](https://github.com/posthtml/posthtml) plugin for converting HTML ta
 
 Useful as part of a post-export script for visual editors that don't support certain tags, among other things.
 
+**NOTE:** As of version 2.0.0 `retag` is a **named** import instead of a default one.
+
 Before:
 
-``` html
+```html
 <html>
   <body>
     <!-- ... content -->
@@ -53,9 +55,9 @@ npm install --save-dev posthtml posthtml-retag
 <details open><summary>CommonJS format</summary>
 
 ``` js
-const fs = require('fs');
+const fs = require('node:fs');
 const posthtml = require('posthtml');
-const retag = require('posthtml-retag');
+const { retag } = require('posthtml-retag');
 // Import additional plugins (if any)
 
 const html = fs.readFileSync('/path/to/input.html', 'utf8');
@@ -76,9 +78,9 @@ posthtml(
 <details><summary>ES Module format</summary>
 
 ``` js
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import posthtml from 'posthtml';
-import retag from 'posthtml-retag';
+import { retag } from 'posthtml-retag';
 // Import additional plugins (if any)
 
 const html = readFileSync('/path/to/input.html', 'utf8');
@@ -115,11 +117,11 @@ Default: `false`
 Set to `true` to also remove `display: none;` from the style attribute of the element being converted. If it's the only value in the style attribute, the style attribute will be removed.
 
 ```html
-<div retag="template" style="display: none"></div>
+<div retag="template" style="display: none">stuff</div>
 ```
 
 ```html
-<template></template>
+<template>stuff</template>
 ```
 
 [npm]: https://img.shields.io/npm/v/posthtml-retag.svg

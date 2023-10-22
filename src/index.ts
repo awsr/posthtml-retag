@@ -9,7 +9,7 @@ import type { Node } from "posthtml";
  * of the element being converted unless it is marked as `important`. If the style attribute is empty after
  * conversion, it is removed. Defaults to `false`.
  */
-export default function retag(options: { attr?: string; removeDisplayNone?: boolean } = {}): (tree: Node) => Node {
+export function retag(options: { attr?: string; removeDisplayNone?: boolean } = {}): (tree: Node) => Node {
   options.attr = options.attr || "retag";
   options.removeDisplayNone = options.removeDisplayNone || false;
 

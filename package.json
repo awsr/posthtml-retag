@@ -1,45 +1,49 @@
 {
   "name": "posthtml-retag",
-  "version": "1.0.1",
+  "version": "2.0.0-alpha1",
   "description": "Tag converter plugin for PostHTML",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc && prettier --write ./lib",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awsr/posthtml-retag.git"
+  },
   "keywords": [
     "html",
     "posthtml",
     "posthtml-plugin"
   ],
-  "main": "lib/index.js",
-  "types": "types/index.d.ts",
-  "files": [
-    "lib",
-    "types"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "author": {
-    "name": "Alex Wiser"
-  },
-  "homepage": "https://github.com/awsr/posthtml-retag#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/awsr/posthtml-retag"
-  },
+  "author": "Alex Wiser",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/awsr/posthtml-retag/issues"
   },
-  "license": "MIT",
-  "scripts": {
-    "build": "tsc && prettier --write ./lib"
-  },
+  "homepage": "https://github.com/awsr/posthtml-retag#readme",
   "peerDependencies": {
-    "posthtml": "^0.15.1"
+    "posthtml": "^0.16.6"
   },
   "devDependencies": {
-    "@types/node": "^14.14.12",
-    "posthtml": "^0.15.1",
-    "prettier": "^2.2.1"
+    "posthtml": "^0.16.6",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
   },
   "prettier": {
-    "printWidth": 120
+    "printWidth": 120,
+    "trailingComma": "none"
   }
 }

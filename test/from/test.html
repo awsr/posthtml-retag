@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Test Document</title>
+    <style>
+        .c1 {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <span id="i1" retag="h1" class="c1">Test for <code>&lt;span&gt;</code> to <code>&lt;h1&gt;</code></span>
+    <hr/>
+    <div id="i2" retag="noscript" style="display: none">
+        <p>Test for removal of style attribute</p>
+        <div>
+            <span id="i3" retag="p">Test for nested retagging</span>
+        </div>
+    </div>
+    <hr/>
+    <div id="i4" retag="h2" style="color: darkblue; display: none; border: 1px solid #777">Test for removing<code>display: none</code> and leaving style attribute</div>
+    <hr/>
+    <span id="i5" retag="small" style="display: none !important">Test for overriding<code>removeDisplayNone</code>removal</span>
+</body>
+</html>

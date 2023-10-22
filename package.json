@@ -16,7 +16,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "tsc && prettier --write ./lib",
+    "build": "tsc && prettier --write ./lib --ignore-path=.prettierignore",
     "test": "node --test"
   },
   "repository": {

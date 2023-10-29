@@ -32,12 +32,10 @@ export function retag(options: { attr?: string; removeDisplayNone?: boolean } = 
             if (node.attrs.style.length === 0) {
               delete node.attrs.style;
             }
-
           }
 
           delete node.attrs[options.attr as string];
         }
-
       }
 
       return node;
